@@ -4,6 +4,7 @@ import eventlet
 eventlet.monkey_patch()
 
 import logging
+import time
 import socket
 
 from flask import Flask, send_from_directory, request, jsonify, json
@@ -36,7 +37,7 @@ socketio = SocketIO(app)
 
 @app.route('/')
 def root():
-    return "Hello World!"
+    return "Hello World! %s" % time.asctime()
 
 if __name__ == "__main__":
     socketio.run(app, host="0.0.0.0", port=5000, debug=True)
