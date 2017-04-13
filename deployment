@@ -15,8 +15,7 @@ yaml.add_constructor(_mapping_tag, dict_constructor)
 
 with open(sys.argv[1]) as f:
     md = yaml.load(f)
-    print """
----
+    print """---
 apiVersion: v1
 kind: Service
 metadata:
@@ -55,6 +54,4 @@ spec:
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       securityContext: {{}}
-      terminationGracePeriodSeconds: 30
-
-    """.format(name=md["name"], image=md["image"])
+      terminationGracePeriodSeconds: 30""".format(name=md["name"], image=md["image"])
