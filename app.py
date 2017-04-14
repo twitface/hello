@@ -39,5 +39,9 @@ socketio = SocketIO(app)
 def root():
     return "Hello World!!!! %s\n" % time.asctime()
 
+@app.route('/hello/')
+def annoying():
+    return "this is annoying, but it works"
+
 if __name__ == "__main__":
     socketio.run(app, host="0.0.0.0", port=5000, debug=True)
