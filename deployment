@@ -54,4 +54,4 @@ spec:
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       securityContext: {{}}
-      terminationGracePeriodSeconds: 30""".format(name=md["name"], image=md["image"])
+      terminationGracePeriodSeconds: 30""".format(name=md["name"], image=md["images"][md["name"]])
